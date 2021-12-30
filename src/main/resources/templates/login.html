@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Home</title>
+</head>
+<body>
+	<section
+		class="login1  d-flex justify-content-center align-items-center ">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 offset-md-3 mt-3">
+					<div class="my-card">
+						<div class="container text-center">
+						 <div  th:if="${param.error}" class="alert alert-danger">
+						  
+						  invalid user name password !!
+						  
+						  </div>
+						<div  th:if="${param.logout}" class="alert alert-success">
+						  
+						 you have succesfully logout!!
+						  
+						  </div>
+						  <div  th:if="${param.change}" class="alert alert-success">
+						  
+						 <p  th:text="${param.change}"></p>
+						  
+						  </div>
+						<img style="width: 80px;" th:src="@{/img/login.png}">
+						</div>
+						<h1  class="text-center">Login here</h1>
+						<form action="#"  th:action="@{/dologin}" method="post">
+						 
+						
+							<div class="form-group">
+								<label class="text-info"  for="email">Email id</label> <input name="username"
+									type="email" class="form-control" id="email" required
+									placeholder="Enter email id">
+
+							</div>
+							<div class="form-group">
+									<label class="text-info"  for="password">Password</label> <input 
+									type="password"
+									name="password"
+									class="form-control" 
+				                   
+									id="password" 
+									required
+								    placeholder="Enter your password">  
+								       
+								</div>
+								 <div class="form-group ">
+                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <div class="container text-center">
+                                </div>
+							    <div class="container text-center">
+								<button type="submit"  class="btn bg-primary text-white">Submit</button>
+								<button  type="reset"  class="btn btn-warning text-white">Reset</button>
+								
+								</div>
+							 <div id="register-link" class="text-right">
+                                <a href="/signup/" class="text-info">Register here</a>
+                           
+                            </div>
+							<div class="text-left"  >
+							<a class="text-info" th:href="@{/forget}">Forget Password</a>
+							</div>
+							
+							
+							
+						</form>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+
+
+
+
+	</section>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+    th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+<section>
+	<div class="container">
+		<div class="card">
+			<div class="card-body my-5">
+			
+                    <div class="container text-center">
+                   <img  style="width:200px; height:200px;" class="myprofile" src="#" th:src="@{'/img/c.png'}" alt="profile " />
+                    </div>			
+			  <h1 class="text-center  text-secondary">
+			  start adding contacts on your clouds..
+			  </h1>
+			  <a th:href="@{/user/addcontact}" class="btn btn-primary mt-4 btn-block text-white text-center text-uppercase"  >Add New Contact</a>
+			</div>
+		</div>
+	</div>
+	<script>
+	$(document).ready(()=>{
+	$(".item").removeClass("active");
+	$("#home-link").addClass("active");
+	
+	});
+	
+	
+	</script>
+	
+	
+	
+	
+</section>
+</body>
+</html>
